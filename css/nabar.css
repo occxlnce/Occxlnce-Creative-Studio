@@ -1,0 +1,124 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.text-ticker {
+    width: 100%;
+    overflow: hidden;
+}
+
+.text-ticker-info {
+    display: table;
+    font-size: 150px; /* Fixed typo: Changed font--size to font-size */
+    white-space: nowrap;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: #FD1F03; /* Updated background color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(253, 31, 3);
+    z-index: 100;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(253, 31, 3),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.header:hover::before {
+    left: 100%;
+}
+
+.logo {
+    color: #F1F0F0;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+}
+
+.navbar a {
+    color: #101010;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 35px;
+    transition: 0.3s;
+    font-family: 'Montserrat', sans-serif; /* Changed to Montserrat for navbar links */
+}
+
+.navbar a:hover {
+    color: #F1F0F0;
+}
+
+#menu-icon {
+    font-size: 36px;
+    color: #F1F0F0;
+    display: none;
+}
+
+/* BREAKPOINTS */
+@media (max-width: 992px) {
+    .header {
+        padding: 1.25rem 4%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 0.5rem 4%;
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 1.5rem 0;
+    }
+
+    .nav-bg {
+        position: absolute;
+        top: 79px;
+        left: 0;
+        width: 100%;
+        height: 295px;
+        background: #FD1F03; /* Updated background color */
+        border-bottom: 2px solid rgba(253, 31, 3);
+        backdrop-filter: blur(10px);
+        z-index: 99;
+        display: none;
+    }
+
+    .nav-bg.active {
+        display: block;
+    }
+}

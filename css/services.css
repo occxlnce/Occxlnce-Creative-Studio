@@ -1,0 +1,212 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Roboto+Slab:wght@300;400;700&display=swap');
+
+:root {
+    --color-text: #101010; /* Body text color */
+    --color-bg: #F1F0F0; /* Background color */
+    --color-link: #FD1F03; /* Link color */
+    --color-link-hover: #FD1F03; /* Link hover color */
+    --color-highlight: #101010; /* Highlight color for hover effects */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    place-items: center;
+    align-content: center;
+    overflow-x: hidden;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Roboto Slab', serif;
+    overflow-x: hidden;
+    scrollbar-color: var(--color-bg) var(--color-link);
+}
+
+/* General styles */
+a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-link-hover);
+}
+
+.bg {
+    background-color: var(--color-bg);
+    padding: 2vh; /* Add some padding for better visibility on smaller screens */
+}
+
+.custom-content p {
+    background: -webkit-linear-gradient(65deg, var(--color-link) 0%, #000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+span {
+    color: var(--color-text);
+    text-align: left;
+    padding: 0vh 1vh;
+    font-weight: 600;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-link);
+}
+
+@keyframes shine {
+    0% {
+        background-position-x: -300%;
+    }
+    100% {
+        background-position-x: 500%;
+    }
+}
+
+h2 {
+    font-weight: 300;
+    color: var(--color-link);
+    font-size: 30px;
+}
+
+h3 {
+    font-weight: 200;
+    color: var(--color-link);
+    font-size: 28px;
+}
+
+h4 {
+    font-weight: 500;
+    font-size: 25px;
+    text-align: center;
+    max-font-size: 30px;
+}
+
+h5 {
+    font-weight: 800;
+    font-size: 60px;
+    padding-bottom: 50px;
+    padding-top: 145px;
+    letter-spacing: 5px;
+    position: relative;
+    text-align: center;
+    -webkit-text-stroke: 1.5px var(--color-link);
+    text-stroke: 1.5px var(--color-link);
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    color: transparent;
+    transition: opacity 0.4s;
+}
+
+p {
+    font-weight: 300;
+    color: var(--color-text);
+    font-size: 18px;
+    text-align: justify;
+}
+
+/* Columns and hover effects */
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.column {
+    background-image: url("img/loui2.png");
+    border: none;
+    border-radius: 90px;
+    color: #F1F0F0;
+    cursor: pointer;
+    font-size: 25px;
+    letter-spacing: .1em;
+    outline: none;
+    padding: .75em 2em;
+    position: relative;
+    align-items: center;
+    text-transform: uppercase;
+    margin: -210px;
+    transition: color 0.3s ease-in-out; /* Add transition for color change on hover */
+}
+
+.column:hover {
+    color: var(--color-highlight); /* Change the text color on hover */
+    animation: glow 5s ease-in infinite;
+}
+
+.column::before {
+    animation: glow 5s ease-in infinite;
+    background: var(--color-highlight);
+    border-radius: inherit;
+    content: '';
+    filter: blur(10px);
+    opacity: .75;
+    position: absolute;
+    transition: all .3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.column:hover::before {
+    filter: blur(20px);
+    opacity: 1;
+}
+
+/* Unique colors for each column */
+.column:nth-child(odd) {
+    background-image: url("img/An.png");
+}
+
+.column:nth-child(even) {
+    background-image: url("img/loui2.png");
+}
+
+@keyframes glow {
+    0%, 100% {
+        background: #101010;
+    }
+    25% {
+        background: var(--color-link);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .column {
+        flex: 0 0 100%;
+        margin: 10px; /* Add margin to create space between columns on smaller screens */
+    }
+}
+
+/* Additional styles */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -45px;
+    margin-left: -35px;
+}
+
+.homeowner {
+    padding: 400px 20px 0 20px;
+    text-align: center;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    h4 {
+        font-size: 28px;
+    }
+    h5 {
+        font-size: 32px;
+    }
+}
