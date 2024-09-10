@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&family=Roboto+Slab:wght@300;500&display=swap');
+
+
+/* Reset and Box Sizing */
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+/* Root Font Size */
+:root {
+	font-size: 18px;
+}
+
+/* Body Styles */
+body {
+	margin: 0;
+	color: #101010;
+	background-color: #F1F0F0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	counter-reset: contentSection;
+	font-family: 'Roboto Slab', serif;
+	overflow-x: hidden;
+}
+
+/* Links */
+a {
+	text-decoration: none;
+	color: #FD1F03;
+	outline: none;
+	text-align: center;
+}
+
+.linko {
+	color: #101010;
+	text-align: center;
+}
+
+a:hover,
+a:focus {
+	color: #F1F0F0;
+	outline: none;
+	text-decoration: none;
+}
+
+/* Main Content */
+main {
+	overflow-x: hidden;
+	position: relative;
+}
+
+/* Form Styles */
+form {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 2em;
+	background: #F1F0F0;
+	border-radius: 8px;
+	box-shadow: 0 1px 1px rgba(253, 31, 3);
+}
+
+form input,
+form textarea {
+	width: 100%;
+	padding: 1em;
+	margin-top: 1em;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	color: #FD1F03;
+	border: 1px solid #FD1F03;
+	border-radius: 4px;
+	transition: border-color 0.3s ease-in-out;
+}
+
+form input:focus,
+form textarea:focus {
+	border-color: #e74c3c;
+}
+
+form .btn {
+	border-radius: 20px;
+	display: inline-block;
+	color: #F1F0F0;
+	background-color: #FD1F03;
+	padding: 1em 2em;
+	margin-top: 1em;
+	border: solid transparent 1px;
+	transition: background-color 0.3s ease-in-out;
+}
+
+form .btn:hover {
+	background: #FD1F03;
+}
+
+form .btn:active {
+	box-shadow: 0 2px 0 rgba(253, 31, 3);
+}
+
+form .hidden {
+	display: none;
+}
+
+form label {
+	display: inline-block;
+	margin-top: 2em;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 25px;
+	color: #FD1F03;
+	font-weight: 500;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+form textarea {
+	height: 126px;
+}
+
+/* Footer */
+footer {
+	text-align: center;
+	color: #FD1F03;
+	background: #F1F0F0;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	height: 40px;
+	width: 100%;
+}

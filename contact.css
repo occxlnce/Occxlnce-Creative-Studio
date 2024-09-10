@@ -1,0 +1,142 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 18px;
+}
+
+body {
+    margin: 0;
+    --color-text: #101010;
+    --color-bg: #F1F0F0;
+    --color-link: #FD1F03;
+    --color-link-hover: #101010;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Roboto Slab', serif;
+    overflow-x: hidden;
+}
+
+/* Update heading styles to use Montserrat */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+	text-align: center;
+}
+
+.homewonder {
+    padding: 300px 20px 0 20px;
+    text-align: center;
+}
+
+.select-menu {
+    max-width: 330px;
+    margin: 50px auto;
+    padding-top: 5vh;
+}
+
+.select-menu .select-btn {
+    display: flex;
+    height: 55px;
+    background: #FD1F03;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 20px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    box-shadow: 0 0 5px rgba(253, 31, 3);
+}
+
+.select-menu .options {
+    position: absolute;
+    width: 330px;
+    overflow-y: auto;
+    max-height: 295px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+    background: #F1F0F0;
+    box-shadow: 0 0 10px rgba(253, 31, 3);
+    animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-duration: 0.35s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.35s;
+    -webkit-animation-fill-mode: both;
+}
+
+.select-menu .options .option {
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    padding: 0 16px;
+    border-radius: 8px;
+    align-items: center;
+    background: #F1F0F0;
+}
+
+.select-menu .options .option:hover {
+    background: #F1F0F0;
+}
+
+.select-menu .options .option i {
+    font-size: 25px;
+    margin-right: 12px;
+}
+
+.select-menu .options .option .option-text {
+    font-size: 18px;
+    color: #FD1F03;
+}
+
+.select-btn i {
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+.select-menu.active .select-btn i {
+    transform: rotate(-180deg);
+}
+
+.select-menu.active .options {
+    display: block;
+    opacity: 0;
+    z-index: 10;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    to {
+        transform: translate3d(0, 20px, 0);
+        opacity: 0;
+    }
+}
