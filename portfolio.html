@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Projects | Occxlnce Creative Studio</title>
+  <link rel="shortcut icon" href="favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+<link rel="stylesheet" href="https://use.typekit.net/zhq0vyf.css">
+
+<link rel="stylesheet" href="oversight.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/nabar.css">
+<style>
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: #101010;
+    color: #FD1F03;
+	}
+
+.view{
+	border: 1px solid #FD1F03;
+	padding-left: 3px;
+	padding-right: 3px;
+	border-radius: 30px;
+}
+
+.view:hover{
+	background-color: #FD1F03;
+	color: #F1F0F0;
+
+}
+
+/* css custom-slider */
+.custom-slider{
+    height: 100vh;
+    margin-top: -50px;
+    position: relative;
+}
+.custom-slider .custom-list .custom-item{
+    position: absolute;
+    inset: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+.custom-slider .custom-list .custom-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.custom-slider .custom-list .custom-item::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+        to top, #101010 40%, transparent
+    );
+}
+.custom-slider .custom-list .custom-item .custom-content{
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 500px;
+    max-width: 80%;
+    z-index: 1;
+}
+.custom-slider .custom-list .custom-item .custom-content p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+.custom-slider .custom-list .custom-item .custom-content h2{
+    font-size: 100px;
+    margin: 0;
+}
+.custom-slider .custom-list .custom-item.active{
+    opacity: 1;
+    z-index: 10;
+}
+@keyframes showContent {
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+.custom-slider .custom-list .custom-item.active p:nth-child(1),
+.custom-slider .custom-list .custom-item.active h2,
+.custom-slider .custom-list .custom-item.active p:nth-child(3){
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s .7s ease-in-out 1 forwards;
+}
+.custom-slider .custom-list .custom-item.active h2{
+    animation-delay: 1s;
+}
+.custom-slider .custom-list .custom-item.active p:nth-child(3){
+    animation-duration: 1.3s;
+}
+.custom-arrows{
+    position: absolute;
+    top: 30%;
+    right: 50px;
+    z-index: 100;
+}
+.custom-arrows button{
+    background-color: #eee5;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: x-large;
+    color: #FD1F03;
+    transition: .5s;
+}
+.custom-arrows button:hover{
+    background-color: #F1F0F0;
+    color: #101010;
+}
+.custom-thumbnail{
+    position: absolute;
+    bottom: 50px;
+    z-index: 11;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 250px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    overflow: auto;
+    justify-content: center;
+}
+.custom-thumbnail::-webkit-scrollbar{
+    width: 0;
+}
+.custom-thumbnail .custom-item{
+    width: 150px;
+    height: 220px;
+    filter: brightness(.5);
+    transition: .5s;
+    flex-shrink: 0;
+}
+.custom-thumbnail .custom-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.custom-thumbnail .custom-item.active{
+    filter: brightness(1.5);
+}
+.custom-thumbnail .custom-item .custom-content{
+    position: absolute;
+    inset: auto 10px 10px 10px;
+}
+@media screen and (max-width: 678px) {
+    .custom-thumbnail{
+        justify-content: start;
+    }
+    .custom-slider .custom-list .custom-item .custom-content h2{
+        font-size: 60px;
+    }
+    .custom-arrows{
+        top: 10%;
+    }
+}
+
+
+</style>
+
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">OCCXLNCE</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Work</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <div class="nav-bg"></div>
+
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+  <h5></h5>
+<br>
+<br>
+<br>
+<br>
+
+   <div class="custom-slider">
+        <!-- list Items -->
+        <div class="custom-list">
+            <div class="custom-item active">
+                <img src="img/arngrencover.png">
+                <div class="custom-content">
+                    <p>BRANDING</p>
+                    <h2>Arngren</h2>
+                    <p>
+                        Arngren.net is a website that sells various products, including flying cars, remote control (RC) products, electric bikes, electric vehicles, electric ATVs, and children's electric cars
+                    </p>
+                </div>
+            </div>
+			
+            <div class="custom-item">
+                <img src="img/ocscover.png">
+                <div class="custom-content">
+                    <p>BRANDING | DESIGN | WEB DEVELOPMENT</p>
+                    <h2>OCS</h2>
+                    <p>
+                       Occxlnce Creative Studio's branding, design, and development project showcases a modern, cohesive visual identity and digital presence.
+                    </p>
+                </div>
+            </div>
+			
+			<div class="custom-item">
+                <img src="img/lgcover.png">
+                <div class="custom-content">
+                    <p>BRANDING | DESIGN | WEB DEVELOPMENT</p>
+                    <h2>Loui Greens</h2>
+                    <p>
+					Loui Greens, a beacon in the realm of eco-friendly products, embarked on a captivating branding journey that transcends mere commerce. Immersed in the tranquility of nature, the brand's commitment to sustainability and style is ingeniously captured in its distinctive branding.
+                    </p>
+                </div>
+            </div>
+			
+            <div class="custom-item">
+                <img src="img/epscover.png">
+                <div class="custom-content">
+                    <p>WEB DEVELOPMENT</p>
+                    <h2>Express PVC Specialist</h2>
+                    <p>
+                        EPS is a leading provider of high-quality PVC solutions for outdoor spaces. Specializing in pool covers, roller blinds, retractable awnings, and more, we offer innovative designs tailored to meet your needs.
+                    </p>
+                </div>
+            </div>
+			
+            <div class="custom-item">
+                <img src="img/scpcover.png">
+                <div class="custom-content">
+                    <p>WEB DEVELOPMENT</p>
+                    <h2>Staruts Construction & Projects</h2>
+                    <p>
+                        Project description
+                    </p>
+                </div>
+            </div>
+			
+            <div class="custom-item">
+                <img src="img/lofhatscover.png">
+                <div class="custom-content">
+                    <p>DESIGN</p>
+                    <h2>Lofhats</h2>
+                    <p>
+                        This project involved creating an eye-catching real estate advertisement poster for LOFHATS. The design centers around a captivating photograph of the property, showcasing its terracotta roof tiles against a clear blue sky—a visual representation of upscale urban living.
+                    </p>
+                </div>
+            </div>
+			
+        </div>
+        <!-- button arrows -->
+        <div class="custom-arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <!-- thumbnail -->
+        <div class="custom-thumbnail">
+            <div class="custom-item active">
+                <img src="img/arn1.png">
+                <div class="custom-content">
+                    <a href="arngren.html" class="view">VIEW</a>
+                </div>
+            </div>
+			
+            <div class="custom-item">
+                <img src="img/ocslogo.png">
+                <div class="custom-content">
+                    <a href="#" class="view">VIEW</a>
+                </div>
+            </div>
+			
+            <div class="custom-item">
+                <img src="img/lglogo.png">
+                <div class="custom-content">
+                    <a href="loui.html" class="view">VIEW</a>
+                </div>
+            </div>
+			
+            <div class="custom-item">
+                <img src="img/epslogo.jpg">
+                <div class="custom-content">
+                    <a href="epvcs.html" class="view">VIEW</a>
+                </div>
+            </div>
+			
+            <div class="custom-item">
+                <img src="img/scplogo.png">
+                <div class="custom-content">
+                    <a href="staruts.html" class="view">VIEW</a>
+                </div>
+            </div>
+			
+			<div class="custom-item">
+                <img src="img/lofhatslogo.png">
+                <div class="custom-content">
+                    <a href="lofhats.html" class="view">VIEW</a>
+                </div>
+            </div>
+			
+        </div>
+    </div> 
+ 
+<div class="cursor-wrap js-cursor-wrap">
+  <div class="cursor js-cursor">
+    <svg height="60" width="60" class="circle">
+      <circle cx="30" cy="30" r="26" stroke="#FD1F03" stroke-width="1.9" fill="transparent" />
+    </svg>
+  </div>
+</div>
+
+        <!-- JAVASCRIPT FILES -->
+<script src="css/cursor.js">
+</script> 
+<script src="app.js">
+</script> 
+
+<script src="oversight.js"></script>
+<script>
+
+const menuIcon = document.querySelector('#menu-icon');
+const navbar = document.querySelector('.navbar');
+const navbg = document.querySelector('.nav-bg');
+menuIcon.addEventListener('click', () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+    navbg.classList.toggle('active');
+});
+
+</script>	
+	
+</body>
+</html>
+
